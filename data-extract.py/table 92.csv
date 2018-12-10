@@ -1,0 +1,3 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Implied#$F8#1#2

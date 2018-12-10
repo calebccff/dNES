@@ -1,0 +1,5 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Immediate#$C0#2#2
+2#Zero Page#$C4#2#3
+3#Absolute#$CC#3#4

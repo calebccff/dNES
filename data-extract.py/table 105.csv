@@ -1,0 +1,8 @@
+#0#1#2
+0#C#Carry Flag#Not affected
+1#Z#Zero Flag#Set if X = 0
+2#I#Interrupt Disable#Not affected
+3#D#Decimal Mode Flag#Not affected
+4#B#Break Command#Not affected
+5#V#Overflow Flag#Not affected
+6#N#Negative Flag#Set if bit 7 of X is set

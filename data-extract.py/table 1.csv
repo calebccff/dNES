@@ -1,0 +1,8 @@
+#0#1#2
+0#C#Carry Flag#Set if overflow in bit 7
+1#Z#Zero Flag#Set if A = 0
+2#I#Interrupt Disable#Not affected
+3#D#Decimal Mode Flag#Not affected
+4#B#Break Command#Not affected
+5#V#Overflow Flag#Set if sign bit is incorrect
+6#N#Negative Flag#Set if bit 7 set

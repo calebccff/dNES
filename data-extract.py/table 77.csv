@@ -1,0 +1,8 @@
+#0#1#2
+0#C#Carry Flag#Set from stack
+1#Z#Zero Flag#Set from stack
+2#I#Interrupt Disable#Set from stack
+3#D#Decimal Mode Flag#Set from stack
+4#B#Break Command#Set from stack
+5#V#Overflow Flag#Set from stack
+6#N#Negative Flag#Set from stack

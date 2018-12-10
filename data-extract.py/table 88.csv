@@ -1,0 +1,10 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Immediate#$E9#2#2
+2#Zero Page#$E5#2#3
+3#Zero Page,X#$F5#2#4
+4#Absolute#$ED#3#4
+5#Absolute,X#$FD#3#4 (+1 if page crossed)
+6#Absolute,Y#$F9#3#4 (+1 if page crossed)
+7#(Indirect,X)#$E1#2#6
+8#(Indirect),Y#$F1#2#5 (+1 if page crossed)

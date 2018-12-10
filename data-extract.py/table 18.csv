@@ -1,0 +1,3 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Relative#$D0#2#2 (+1 if branch succeeds  +2 if to a new page)

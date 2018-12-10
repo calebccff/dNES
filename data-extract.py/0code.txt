@@ -1,0 +1,358 @@
+
+instr = Instr("ADC imm", &addr_imm, &op_adc, 2, 2);
+instrSet[0x69] = instr;
+instr = Instr("ADC zer", &addr_zer, &op_adc, 2, 3);
+instrSet[0x65] = instr;
+instr = Instr("ADC zex", &addr_zex, &op_adc, 2, 4);
+instrSet[0x75] = instr;
+instr = Instr("ADC abs", &addr_abs, &op_adc, 3, 4);
+instrSet[0x6D] = instr;
+instr = Instr("ADC abx", &addr_abx, &op_adc, 3, 4);
+instrSet[0x7D] = instr;
+instr = Instr("ADC aby", &addr_aby, &op_adc, 3, 4);
+instrSet[0x79] = instr;
+instr = Instr("ADC inx", &addr_inx, &op_adc, 2, 6);
+instrSet[0x61] = instr;
+instr = Instr("ADC iny", &addr_iny, &op_adc, 2, 5);
+instrSet[0x71] = instr;
+
+instr = Instr("AND imm", &addr_imm, &op_and, 2, 2);
+instrSet[0x29] = instr;
+instr = Instr("AND zer", &addr_zer, &op_and, 2, 3);
+instrSet[0x25] = instr;
+instr = Instr("AND zex", &addr_zex, &op_and, 2, 4);
+instrSet[0x35] = instr;
+instr = Instr("AND abs", &addr_abs, &op_and, 3, 4);
+instrSet[0x2D] = instr;
+instr = Instr("AND abx", &addr_abx, &op_and, 3, 4);
+instrSet[0x3D] = instr;
+instr = Instr("AND aby", &addr_aby, &op_and, 3, 4);
+instrSet[0x39] = instr;
+instr = Instr("AND inx", &addr_inx, &op_and, 2, 6);
+instrSet[0x21] = instr;
+instr = Instr("AND iny", &addr_iny, &op_and, 2, 5);
+instrSet[0x31] = instr;
+
+instr = Instr("ASL acc", &addr_acc, &op_asl, 1, 2);
+instrSet[0x0A] = instr;
+instr = Instr("ASL zer", &addr_zer, &op_asl, 2, 5);
+instrSet[0x06] = instr;
+instr = Instr("ASL zex", &addr_zex, &op_asl, 2, 6);
+instrSet[0x16] = instr;
+instr = Instr("ASL abs", &addr_abs, &op_asl, 3, 6);
+instrSet[0x0E] = instr;
+instr = Instr("ASL abx", &addr_abx, &op_asl, 3, 7);
+instrSet[0x1E] = instr;
+
+instr = Instr("BCC rel", &addr_rel, &op_bcc, 2, 2);
+instrSet[0x90] = instr;
+
+instr = Instr("BCS rel", &addr_rel, &op_bcs, 2, 2);
+instrSet[0xB0] = instr;
+
+instr = Instr("BEQ rel", &addr_rel, &op_beq, 2, 2);
+instrSet[0xF0] = instr;
+
+instr = Instr("BIT zer", &addr_zer, &op_bit, 2, 3);
+instrSet[0x24] = instr;
+instr = Instr("BIT abs", &addr_abs, &op_bit, 3, 4);
+instrSet[0x2C] = instr;
+
+instr = Instr("BMI rel", &addr_rel, &op_bmi, 2, 2);
+instrSet[0x30] = instr;
+
+instr = Instr("BNE rel", &addr_rel, &op_bne, 2, 2);
+instrSet[0xD0] = instr;
+
+instr = Instr("BPL rel", &addr_rel, &op_bpl, 2, 2);
+instrSet[0x10] = instr;
+
+instr = Instr("BRK imp", &addr_imp, &op_brk, 1, 7);
+instrSet[0x00] = instr;
+
+instr = Instr("BVC rel", &addr_rel, &op_bvc, 2, 2);
+instrSet[0x50] = instr;
+
+instr = Instr("BVS rel", &addr_rel, &op_bvs, 2, 2);
+instrSet[0x70] = instr;
+
+instr = Instr("CLC imp", &addr_imp, &op_clc, 1, 2);
+instrSet[0x18] = instr;
+
+instr = Instr("CLD imp", &addr_imp, &op_cld, 1, 2);
+instrSet[0xD8] = instr;
+
+instr = Instr("CLI imp", &addr_imp, &op_cli, 1, 2);
+instrSet[0x58] = instr;
+
+instr = Instr("CLV imp", &addr_imp, &op_clv, 1, 2);
+instrSet[0xB8] = instr;
+
+instr = Instr("CMP imm", &addr_imm, &op_cmp, 2, 2);
+instrSet[0xC9] = instr;
+instr = Instr("CMP zer", &addr_zer, &op_cmp, 2, 3);
+instrSet[0xC5] = instr;
+instr = Instr("CMP zex", &addr_zex, &op_cmp, 2, 4);
+instrSet[0xD5] = instr;
+instr = Instr("CMP abs", &addr_abs, &op_cmp, 3, 4);
+instrSet[0xCD] = instr;
+instr = Instr("CMP abx", &addr_abx, &op_cmp, 3, 4);
+instrSet[0xDD] = instr;
+instr = Instr("CMP aby", &addr_aby, &op_cmp, 3, 4);
+instrSet[0xD9] = instr;
+instr = Instr("CMP inx", &addr_inx, &op_cmp, 2, 6);
+instrSet[0xC1] = instr;
+instr = Instr("CMP iny", &addr_iny, &op_cmp, 2, 5);
+instrSet[0xD1] = instr;
+
+instr = Instr("CPX imm", &addr_imm, &op_cpx, 2, 2);
+instrSet[0xE0] = instr;
+instr = Instr("CPX zer", &addr_zer, &op_cpx, 2, 3);
+instrSet[0xE4] = instr;
+instr = Instr("CPX abs", &addr_abs, &op_cpx, 3, 4);
+instrSet[0xEC] = instr;
+
+instr = Instr("CPY imm", &addr_imm, &op_cpy, 2, 2);
+instrSet[0xC0] = instr;
+instr = Instr("CPY zer", &addr_zer, &op_cpy, 2, 3);
+instrSet[0xC4] = instr;
+instr = Instr("CPY abs", &addr_abs, &op_cpy, 3, 4);
+instrSet[0xCC] = instr;
+
+instr = Instr("DEC zer", &addr_zer, &op_dec, 2, 5);
+instrSet[0xC6] = instr;
+instr = Instr("DEC zex", &addr_zex, &op_dec, 2, 6);
+instrSet[0xD6] = instr;
+instr = Instr("DEC abs", &addr_abs, &op_dec, 3, 6);
+instrSet[0xCE] = instr;
+instr = Instr("DEC abx", &addr_abx, &op_dec, 3, 7);
+instrSet[0xDE] = instr;
+
+instr = Instr("DEX imp", &addr_imp, &op_dex, 1, 2);
+instrSet[0xCA] = instr;
+
+instr = Instr("DEY imp", &addr_imp, &op_dey, 1, 2);
+instrSet[0x88] = instr;
+
+instr = Instr("EOR imm", &addr_imm, &op_eor, 2, 2);
+instrSet[0x49] = instr;
+instr = Instr("EOR zer", &addr_zer, &op_eor, 2, 3);
+instrSet[0x45] = instr;
+instr = Instr("EOR zex", &addr_zex, &op_eor, 2, 4);
+instrSet[0x55] = instr;
+instr = Instr("EOR abs", &addr_abs, &op_eor, 3, 4);
+instrSet[0x4D] = instr;
+instr = Instr("EOR abx", &addr_abx, &op_eor, 3, 4);
+instrSet[0x5D] = instr;
+instr = Instr("EOR aby", &addr_aby, &op_eor, 3, 4);
+instrSet[0x59] = instr;
+instr = Instr("EOR inx", &addr_inx, &op_eor, 2, 6);
+instrSet[0x41] = instr;
+instr = Instr("EOR iny", &addr_iny, &op_eor, 2, 5);
+instrSet[0x51] = instr;
+
+instr = Instr("INC zer", &addr_zer, &op_inc, 2, 5);
+instrSet[0xE6] = instr;
+instr = Instr("INC zex", &addr_zex, &op_inc, 2, 6);
+instrSet[0xF6] = instr;
+instr = Instr("INC abs", &addr_abs, &op_inc, 3, 6);
+instrSet[0xEE] = instr;
+instr = Instr("INC abx", &addr_abx, &op_inc, 3, 7);
+instrSet[0xFE] = instr;
+
+instr = Instr("INX imp", &addr_imp, &op_inx, 1, 2);
+instrSet[0xE8] = instr;
+
+instr = Instr("INY imp", &addr_imp, &op_iny, 1, 2);
+instrSet[0xC8] = instr;
+
+instr = Instr("JMP abs", &addr_abs, &op_jmp, 3, 3);
+instrSet[0x4C] = instr;
+instr = Instr("JMP abi", &addr_abi, &op_jmp, 3, 5);
+instrSet[0x6C] = instr;
+
+instr = Instr("JSR abs", &addr_abs, &op_jsr, 3, 6);
+instrSet[0x20] = instr;
+
+instr = Instr("LDA imm", &addr_imm, &op_lda, 2, 2);
+instrSet[0xA9] = instr;
+instr = Instr("LDA zer", &addr_zer, &op_lda, 2, 3);
+instrSet[0xA5] = instr;
+instr = Instr("LDA zex", &addr_zex, &op_lda, 2, 4);
+instrSet[0xB5] = instr;
+instr = Instr("LDA abs", &addr_abs, &op_lda, 3, 4);
+instrSet[0xAD] = instr;
+instr = Instr("LDA abx", &addr_abx, &op_lda, 3, 4);
+instrSet[0xBD] = instr;
+instr = Instr("LDA aby", &addr_aby, &op_lda, 3, 4);
+instrSet[0xB9] = instr;
+instr = Instr("LDA inx", &addr_inx, &op_lda, 2, 6);
+instrSet[0xA1] = instr;
+instr = Instr("LDA iny", &addr_iny, &op_lda, 2, 5);
+instrSet[0xB1] = instr;
+
+instr = Instr("LDX imm", &addr_imm, &op_ldx, 2, 2);
+instrSet[0xA2] = instr;
+instr = Instr("LDX zer", &addr_zer, &op_ldx, 2, 3);
+instrSet[0xA6] = instr;
+instr = Instr("LDX zey", &addr_zey, &op_ldx, 2, 4);
+instrSet[0xB6] = instr;
+instr = Instr("LDX abs", &addr_abs, &op_ldx, 3, 4);
+instrSet[0xAE] = instr;
+instr = Instr("LDX aby", &addr_aby, &op_ldx, 3, 4);
+instrSet[0xBE] = instr;
+
+instr = Instr("LDY imm", &addr_imm, &op_ldy, 2, 2);
+instrSet[0xA0] = instr;
+instr = Instr("LDY zer", &addr_zer, &op_ldy, 2, 3);
+instrSet[0xA4] = instr;
+instr = Instr("LDY zex", &addr_zex, &op_ldy, 2, 4);
+instrSet[0xB4] = instr;
+instr = Instr("LDY abs", &addr_abs, &op_ldy, 3, 4);
+instrSet[0xAC] = instr;
+instr = Instr("LDY abx", &addr_abx, &op_ldy, 3, 4);
+instrSet[0xBC] = instr;
+
+instr = Instr("LSR acc", &addr_acc, &op_lsr, 1, 2);
+instrSet[0x4A] = instr;
+instr = Instr("LSR zer", &addr_zer, &op_lsr, 2, 5);
+instrSet[0x46] = instr;
+instr = Instr("LSR zex", &addr_zex, &op_lsr, 2, 6);
+instrSet[0x56] = instr;
+instr = Instr("LSR abs", &addr_abs, &op_lsr, 3, 6);
+instrSet[0x4E] = instr;
+instr = Instr("LSR abx", &addr_abx, &op_lsr, 3, 7);
+instrSet[0x5E] = instr;
+
+instr = Instr("NOP imp", &addr_imp, &op_nop, 1, 2);
+instrSet[0xEA] = instr;
+
+instr = Instr("ORA imm", &addr_imm, &op_ora, 2, 2);
+instrSet[0x09] = instr;
+instr = Instr("ORA zer", &addr_zer, &op_ora, 2, 3);
+instrSet[0x05] = instr;
+instr = Instr("ORA zex", &addr_zex, &op_ora, 2, 4);
+instrSet[0x15] = instr;
+instr = Instr("ORA abs", &addr_abs, &op_ora, 3, 4);
+instrSet[0x0D] = instr;
+instr = Instr("ORA abx", &addr_abx, &op_ora, 3, 4);
+instrSet[0x1D] = instr;
+instr = Instr("ORA aby", &addr_aby, &op_ora, 3, 4);
+instrSet[0x19] = instr;
+instr = Instr("ORA inx", &addr_inx, &op_ora, 2, 6);
+instrSet[0x01] = instr;
+instr = Instr("ORA iny", &addr_iny, &op_ora, 2, 5);
+instrSet[0x11] = instr;
+
+instr = Instr("PHA imp", &addr_imp, &op_pha, 1, 3);
+instrSet[0x48] = instr;
+
+instr = Instr("PHP imp", &addr_imp, &op_php, 1, 3);
+instrSet[0x08] = instr;
+
+instr = Instr("PLA imp", &addr_imp, &op_pla, 1, 4);
+instrSet[0x68] = instr;
+
+instr = Instr("PLP imp", &addr_imp, &op_plp, 1, 4);
+instrSet[0x28] = instr;
+
+instr = Instr("ROL acc", &addr_acc, &op_rol, 1, 2);
+instrSet[0x2A] = instr;
+instr = Instr("ROL zer", &addr_zer, &op_rol, 2, 5);
+instrSet[0x26] = instr;
+instr = Instr("ROL zex", &addr_zex, &op_rol, 2, 6);
+instrSet[0x36] = instr;
+instr = Instr("ROL abs", &addr_abs, &op_rol, 3, 6);
+instrSet[0x2E] = instr;
+instr = Instr("ROL abx", &addr_abx, &op_rol, 3, 7);
+instrSet[0x3E] = instr;
+
+instr = Instr("ROR acc", &addr_acc, &op_ror, 1, 2);
+instrSet[0x6A] = instr;
+instr = Instr("ROR zer", &addr_zer, &op_ror, 2, 5);
+instrSet[0x66] = instr;
+instr = Instr("ROR zex", &addr_zex, &op_ror, 2, 6);
+instrSet[0x76] = instr;
+instr = Instr("ROR abs", &addr_abs, &op_ror, 3, 6);
+instrSet[0x6E] = instr;
+instr = Instr("ROR abx", &addr_abx, &op_ror, 3, 7);
+instrSet[0x7E] = instr;
+
+instr = Instr("RTI imp", &addr_imp, &op_rti, 1, 6);
+instrSet[0x40] = instr;
+
+instr = Instr("RTS imp", &addr_imp, &op_rts, 1, 6);
+instrSet[0x60] = instr;
+
+instr = Instr("SBC imm", &addr_imm, &op_sbc, 2, 2);
+instrSet[0xE9] = instr;
+instr = Instr("SBC zer", &addr_zer, &op_sbc, 2, 3);
+instrSet[0xE5] = instr;
+instr = Instr("SBC zex", &addr_zex, &op_sbc, 2, 4);
+instrSet[0xF5] = instr;
+instr = Instr("SBC abs", &addr_abs, &op_sbc, 3, 4);
+instrSet[0xED] = instr;
+instr = Instr("SBC abx", &addr_abx, &op_sbc, 3, 4);
+instrSet[0xFD] = instr;
+instr = Instr("SBC aby", &addr_aby, &op_sbc, 3, 4);
+instrSet[0xF9] = instr;
+instr = Instr("SBC inx", &addr_inx, &op_sbc, 2, 6);
+instrSet[0xE1] = instr;
+instr = Instr("SBC iny", &addr_iny, &op_sbc, 2, 5);
+instrSet[0xF1] = instr;
+
+instr = Instr("SEC imp", &addr_imp, &op_sec, 1, 2);
+instrSet[0x38] = instr;
+
+instr = Instr("SED imp", &addr_imp, &op_sed, 1, 2);
+instrSet[0xF8] = instr;
+
+instr = Instr("SEI imp", &addr_imp, &op_sei, 1, 2);
+instrSet[0x78] = instr;
+
+instr = Instr("STA zer", &addr_zer, &op_sta, 2, 3);
+instrSet[0x85] = instr;
+instr = Instr("STA zex", &addr_zex, &op_sta, 2, 4);
+instrSet[0x95] = instr;
+instr = Instr("STA abs", &addr_abs, &op_sta, 3, 4);
+instrSet[0x8D] = instr;
+instr = Instr("STA abx", &addr_abx, &op_sta, 3, 5);
+instrSet[0x9D] = instr;
+instr = Instr("STA aby", &addr_aby, &op_sta, 3, 5);
+instrSet[0x99] = instr;
+instr = Instr("STA inx", &addr_inx, &op_sta, 2, 6);
+instrSet[0x81] = instr;
+instr = Instr("STA iny", &addr_iny, &op_sta, 2, 6);
+instrSet[0x91] = instr;
+
+instr = Instr("STX zer", &addr_zer, &op_stx, 2, 3);
+instrSet[0x86] = instr;
+instr = Instr("STX zey", &addr_zey, &op_stx, 2, 4);
+instrSet[0x96] = instr;
+instr = Instr("STX abs", &addr_abs, &op_stx, 3, 4);
+instrSet[0x8E] = instr;
+
+instr = Instr("STY zer", &addr_zer, &op_sty, 2, 3);
+instrSet[0x84] = instr;
+instr = Instr("STY zex", &addr_zex, &op_sty, 2, 4);
+instrSet[0x94] = instr;
+instr = Instr("STY abs", &addr_abs, &op_sty, 3, 4);
+instrSet[0x8C] = instr;
+
+instr = Instr("TAX imp", &addr_imp, &op_tax, 1, 2);
+instrSet[0xAA] = instr;
+
+instr = Instr("TAY imp", &addr_imp, &op_tay, 1, 2);
+instrSet[0xA8] = instr;
+
+instr = Instr("TSX imp", &addr_imp, &op_tsx, 1, 2);
+instrSet[0xBA] = instr;
+
+instr = Instr("TXA imp", &addr_imp, &op_txa, 1, 2);
+instrSet[0x8A] = instr;
+
+instr = Instr("TXS imp", &addr_imp, &op_txs, 1, 2);
+instrSet[0x9A] = instr;
+
+instr = Instr("TYA imp", &addr_imp, &op_tya, 1, 2);
+instrSet[0x98] = instr;

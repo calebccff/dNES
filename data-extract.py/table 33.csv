@@ -1,0 +1,8 @@
+#0#1#2
+0#C#Carry Flag#Not affected
+1#Z#Zero Flag#Not affected
+2#I#Interrupt Disable#Not affected
+3#D#Decimal Mode Flag#Not affected
+4#B#Break Command#Not affected
+5#V#Overflow Flag#Set to 0
+6#N#Negative Flag#Not affected

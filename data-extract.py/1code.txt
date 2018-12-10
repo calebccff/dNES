@@ -1,0 +1,141 @@
+void op_bpl(ushort src){
+
+}
+void op_brk(ushort src){
+
+}
+void op_bvc(ushort src){
+
+}
+void op_bvs(ushort src){
+
+}
+void op_clc(ushort src){
+
+}
+void op_cld(ushort src){
+
+}
+void op_cli(ushort src){
+
+}
+void op_clv(ushort src){
+
+}
+void op_cmp(ushort src){
+
+}
+void op_cpx(ushort src){
+
+}
+void op_cpy(ushort src){
+
+}
+void op_dec(ushort src){
+
+}
+void op_dex(ushort src){
+
+}
+void op_dey(ushort src){
+
+}
+void op_eor(ushort src){
+
+}
+void op_inc(ushort src){
+
+}
+void op_inx(ushort src){
+
+}
+void op_iny(ushort src){
+
+}
+void op_jmp(ushort src){
+
+}
+void op_jsr(ushort src){
+
+}
+void op_lda(ushort src){
+
+}
+void op_ldx(ushort src){
+
+}
+void op_ldy(ushort src){
+
+}
+void op_lsr(ushort src){
+
+}
+void op_nop(ushort src){
+
+}
+void op_ora(ushort src){
+
+}
+void op_pha(ushort src){
+
+}
+void op_php(ushort src){
+
+}
+void op_pla(ushort src){
+
+}
+void op_plp(ushort src){
+
+}
+void op_rol(ushort src){
+
+}
+void op_ror(ushort src){
+
+}
+void op_rti(ushort src){
+
+}
+void op_rts(ushort src){
+
+}
+void op_sbc(ushort src){
+
+}
+void op_sec(ushort src){
+
+}
+void op_sed(ushort src){
+
+}
+void op_sei(ushort src){
+
+}
+void op_sta(ushort src){
+
+}
+void op_stx(ushort src){
+
+}
+void op_sty(ushort src){
+
+}
+void op_tax(ushort src){
+
+}
+void op_tay(ushort src){
+
+}
+void op_tsx(ushort src){
+
+}
+void op_txa(ushort src){
+
+}
+void op_txs(ushort src){
+
+}
+void op_tya(ushort src){
+
+}

@@ -1,0 +1,7 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Immediate#$A2#2#2
+2#Zero Page#$A6#2#3
+3#Zero Page,Y#$B6#2#4
+4#Absolute#$AE#3#4
+5#Absolute,Y#$BE#3#4 (+1 if page crossed)

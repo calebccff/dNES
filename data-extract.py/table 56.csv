@@ -1,0 +1,4 @@
+#0#1#2#3
+0#Addressing Mode#Opcode#Bytes#Cycles
+1#Absolute#$4C#3#3
+2#Indirect#$6C#3#5

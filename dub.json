@@ -1,0 +1,9 @@
+{
+	"description": "A minimal D application.",
+	"license": "proprietary",
+	"authors": [
+		"caleb"
+	],
+	"copyright": "Copyright © 2018, caleb",
+	"name": "6502-emu"
+}
