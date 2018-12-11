@@ -1,5 +1,6 @@
 struct Memory{
   ubyte[0xFFFF] ram;
+  int count = 0;
 
   ubyte read(ushort a){
     return ram[a];
@@ -12,5 +13,9 @@ struct Memory{
         ram[i] = ram[i-0x800];
       }
     }
+  }
+
+  void writeNext(ubyte b){
+    ram[count++] = b;
   }
 }

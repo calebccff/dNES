@@ -1,5 +1,7 @@
 import std.conv;
 import std.stdio;
+import std.datetime.stopwatch;
+import core.thread;
 
 import memory;
 
@@ -69,6 +71,8 @@ class Mos6502{
   //Counters and such
   ushort cycles = 0; //For counting instruction cycles
   bool illegalOpcode = false; //Set when illegal opcode called
+  StopWatch sw;
+  const double clockTime = 0.055865921; //hnsecs
 
   //Reset vectors
   static const ushort nmiVectorL = 0xFFFA;
@@ -478,15 +482,21 @@ class Mos6502{
   }
 
   void tick(){ //Runs one CPU tick (1 instruction)
+    sw.reset();
+    sw.start();
     ubyte opcode;
     Instr instr;
 
     instr = instrSet[ram.read(pc++)];
-    writeln(instr.name);
+    //writeln(instr.name);
 
     ushort src = instr.mode(); //Set addressing mode
-    writeln(hsrc);
+    //writeln(src);
     instr.exec(src); //Execute instruction
+
+    //Sleep to keep cycle accurate
+    auto time = sw.peek();
+    Thread.sleep(dur!("hnsecs")(1)); //Sleep to make cycles accurate + time taken for instructions to run
   }
 
   //Addressing modes - All return short
@@ -678,7 +688,13 @@ class Mos6502{
   }
 
   void op_adc(ushort src){ //Add with carry
-    const int sum = a + src + p&0x1; //Carry flag is last bit
+    ubyte m = ram.read(src);
+    uint sum = a + m + (IF_CARRY() ? 1 : 0); //Carry flag is last bit
+    SET_ZERO(!(sum & 0xFF));
+    SET_NEGATIVE(sum & 0x80);
+    SET_OVERFLOW(!((a ^ m) & 0x80) && ((a ^ sum) & 0x80));
+    SET_CARRY(sum > 0xFF);
+    a = to!ubyte(sum & 0xFF);
   }
 
   void op_and(ushort src){ //Bitwise AND
