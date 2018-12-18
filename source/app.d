@@ -3,18 +3,24 @@ import std.conv;
 import core.thread;
 
 import cpu;
+import memory;
+import cartridge;
 
 Mos6502 proc;
+Memory ram;
+Cartridge cart;
 
 void main(){
+  cart.loadcart();
   //this is main, it does things
-  proc = new Mos6502();
+  proc = new Mos6502(&ram);
+
   fib();
   ushort val = 0;
   for(;;){
 
     proc.tick();
-    ushort r = to!ushort(to!ushort(proc.ram.read(0xF4)) + to!ushort(proc.ram.read(0xF5) << 8));
+    ushort r = to!ushort(to!ushort(ram.read(0xF4)) + to!ushort(ram.read(0xF5) << 8));
     if(r != val && r > val){
       writeln(to!string(r));
       val = r;
@@ -25,7 +31,7 @@ void main(){
 }
 
 void write(ubyte i){
-  proc.ram.writeNext(i);
+  ram.writeNext(i);
 }
 
 void fib(){

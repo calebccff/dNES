@@ -6,6 +6,9 @@ import core.thread;
 import memory;
 
 class Mos6502{
+
+  Memory* ram;
+
   ubyte    a = 0; //Accumulator
   ubyte    x = 0; //Index X
   ubyte    y = 0; //Index Y
@@ -82,9 +85,6 @@ class Mos6502{
   static const ushort irqVectorL = 0xFFFE;
   static const ushort irqVectorH = 0xFFFF;
 
-
-  Memory ram;
-
   struct Instr{
     string name; //For dev friendliness
 
@@ -113,9 +113,9 @@ class Mos6502{
           least significant byte, Y register added to generate target.
   */
 
-  this(){ //Constructor, initialises address table
+  this(Memory* ram){ //Constructor, initialises address table
+    this.ram = ram;
     Instr instr;
-
     //Fill instruction set with illegals, so unimplemented instructions don't cause a crash
     instr = Instr("Illegal", &addr_imp, &op_illegal);
     for(int i = 0; i < instrSet.length; i++){
