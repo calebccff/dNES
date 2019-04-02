@@ -11,22 +11,25 @@ Memory ram;
 Cartridge cart;
 
 void main(){
-  cart.loadcart();
+  cart.loadcart(ram); // Loads cartridge into RAM
+  writeln("Loaded");
   //this is main, it does things
   proc = new Mos6502(&ram);
+  proc.reset();
 
-  fib();
+  //fib();
   ushort val = 0;
   for(;;){
 
     proc.tick();
-    ushort r = to!ushort(to!ushort(ram.read(0xF4)) + to!ushort(ram.read(0xF5) << 8));
-    if(r != val && r > val){
-      writeln(to!string(r));
-      val = r;
-    }
+    //For fibonacci output
+    // ushort r = to!ushort(to!ushort(ram.read(0xF4)) + to!ushort(ram.read(0xF5) << 8));
+    // if(r != val && r > val){
+    //   writeln(to!string(r));
+    //   val = r;
+    // }
 
-    Thread.sleep(dur!("hnsecs")(10));
+    Thread.sleep(dur!("msecs")(10));
   }
 }
 

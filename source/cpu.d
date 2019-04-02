@@ -88,7 +88,7 @@ class Mos6502{
   struct Instr{
     string name; //For dev friendliness
 
-    ushort delegate()           mode; //Addressing mode, sets up registers and offsets
+    ushort delegate()         mode; //Addressing mode, sets up registers and offsets
     void delegate(ushort src) exec; //The instruction to execute
 
     ubyte len; //Number of bytes
@@ -496,7 +496,7 @@ class Mos6502{
 
     //Sleep to keep cycle accurate
     auto time = sw.peek();
-    Thread.sleep(dur!("hnsecs")(1)); //Sleep to make cycles accurate + time taken for instructions to run
+    //Thread.sleep(dur!("hnsecs")(1)); //Sleep to make cycles accurate + time taken for instructions to run
   }
 
   //Addressing modes - All return short
@@ -645,7 +645,8 @@ class Mos6502{
 
     SET_CONSTANT(1);
 
-    cycles = 6;
+    cycles = 6; //Reset takes 6 cycles?
+    ram.reset();
   }
 
   void stackPush(ubyte val){

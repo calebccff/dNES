@@ -44,9 +44,21 @@ class nesPPU{
   }
 
   /* OAM Address $2003
-    CPU writes address of desired OAM here, most games use OAMDMA
+    CPU writes address desire OAM address here, most games use OAMDMA
   */
   ubyte oamAddr;
+
+  /* OAM Data $2004
+    CPU writes 1 byte of OAM data here (Written to oamAddr)
+  */
+  ubyte oamData;
+
+  /* Scroll $2005
+    CPU writes x/y scroll here, one after another
+  */
+  ubyte scroll;
+
+
 
   /* OAM DMA $4014
     Writing $XX will upload 256 bytes of data from CPU page $XX00-$XXFF to
@@ -64,5 +76,11 @@ class nesPPU{
     ubyte dataH;  // Tile data (high).
   }
 
+  //Misc hardware status vars
   uint[256 * 240] pixels;
+  short scanline = 0; //0-261
+
+  void tick(){
+
+  }
 }
